@@ -81,7 +81,6 @@
              </form>
             </section>
             <section>
-                <h3>
                     <label for="payment"> Betalningsmetod</label><br />
                     <select id="payment" name="pay">
                         <option selected="selected">Kreditkort</option>
@@ -89,7 +88,15 @@
                         <option>Klarna</option>
                         <option>Annat betalningssätt</option>
                     </select>
-                </h3>
+            </section>
+            <section>
+                <h3>Kön</h3>
+            <p>
+                <label><input type="radio" id="gender" name="gender" required="required" placeholder="Vill ej specificera">Vill ej specificera</label> <br />
+                <label><input type="radio" id="gender" name="gender" required="required" placeholder="Kvinna">Kvinna</label> <br />
+                <label><input type="radio" id="gender" name="gender" required="required" placeholder="Man">Man</label> <br />
+                <label><input type="radio" id="gender" name="gender" required="required" placeholder="Other">Annat</label> <br />
+            </p>
             </section>
             <footer></footer>
         </main>
