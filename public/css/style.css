@@ -10,11 +10,24 @@ body {
     font-weight: bold;
 }
 
+#headermenu {
+    text-align: left;
+}
+
 #order {
     background-color: #000000;
     color: #ffffff;
 }
 
 #contact {
-    
+
+}
+
+button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+table {
+    width: 120%;
 }
