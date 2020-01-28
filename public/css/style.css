@@ -6,12 +6,21 @@ body {
     font-size: 12pt;
 }
 
+header {
+    padding-left: 5px;
+    text-align: center;
+}
+
 .allergy {
     font-weight: bold;
 }
 
 #headermenu {
     text-align: left;
+}
+
+#headerpic {
+    opacity: 0.8;
 }
 
 #order {
@@ -22,6 +31,10 @@ body {
 
 #contact {
 
+}
+
+#title {
+    text-align: center;
 }
 
 #submit {

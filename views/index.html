@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Burgerheaven</title>
+        <title>Burgerheaven</title > 
         <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="reset.css">
         <link rel="stylesheet" type="text/css" href="../css/style.css">
     </head>
     <body>
         <main>
-             <h1> 
+             <h1>
+                 <header>
                 Välkommen till Burgerheaven
-             </h1> <br />
+                <img src ="https://www.synergyconsultants.com/wp-content/uploads/2015/07/restaurant-design-header.jpg" id="headerpic">
+                </header> 
+             </h1>
+              <br />
              <section id="order">
                 <h2> 
                     Välj din burgare <br />
@@ -19,20 +24,20 @@
                     Här väljer du vilken burgare du vill ha: <br />
                 </p>
                 <table>
-                    <thead>
+                    <thead id="headermenu">
                     <tr>
                     <th> The Fire Burger <br /> </th>
                     <th> Salmon Deluxe <br />  </th>
-                    <th align="left"> Heavenly Veggie Burger <br /> </th>
+                    <th> Heavenly Veggie Burger <br /> </th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="headerbody">
                         <tr>
                             <td><img src="https://i.iheart.com/v3/re/new_assets/5a0ae89a2697c93e2ac77b9d?ops=max%28750%2C0%29%2Cquality%2880%29" width="200" height="121" alt="The Fire Burger" title="The Fire Burger"></td>
                             <td><img src="https://static01.nyt.com/images/2014/04/18/dining/salmonburger2/salmonburger-articleLarge.jpg" width="200" height="121" alt="Salmon Deluxe" title="Salmon Deluxte"> </th></td>
                             <td><img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fclean-veggie-burgers-ck.jpg%3Fitok%3D_RJ5dLM4&w=450&c=sc&poi=face&q=85" width="200" height="121" alt="Heavenly Veggie Burger" title="Heavenly Veggie Burger">
                         </tr>
-                        <tr>   
+                        <tr id="burgerinfo">   
                             <td>             
                             <ul>
                             <li>800 kCAL</li>
@@ -79,8 +84,6 @@
                     <label for="nummer">Husnummer</label><br>
                     <input type="number" id="nummer" name="nummer" required="required" placeholder="Husnummer"> <br />
                 </p>
-            </section>
-            <section>
                     <label for="payment"> Betalningsmetod</label><br />
                     <select id="payment" name="pay">
                         <option selected="selected">Kreditkort</option>
@@ -88,7 +91,6 @@
                         <option>Klarna</option>
                         <option>Annat betalningssätt</option>
                     </select>
-            </section>
                 <h3>Kön</h3>
             <p>
                 <label><input type="radio" id="gender" name="gender" required="required" placeholder="Vill ej specificera">Vill ej specificera</label> <br />
@@ -98,7 +100,7 @@
             </p>
             </section>
             </form>
-            <button type="submit"><img src="https://apps.odoo.com/apps/modules/13.0/pos_home_delivery/features/home_delivery.png" width="30" height="25" alt="Skicka" title="Skicka">Skicka beställning!</button>
+            <button id="submit" type="submit"><img src="https://apps.odoo.com/apps/modules/13.0/pos_home_delivery/features/home_delivery.png" width="30" height="25" alt="Skicka" title="Skicka">Skicka beställning!</button>
             <hr>    
             <footer> <p> &copy Made up company 2020</p></footer>
         </main>
