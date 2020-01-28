@@ -3,9 +3,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    font-size: 13pt;
+    font-size: 12pt;
 }
 
 .allergy {
     font-weight: bold;
+}
+
+#order {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#contact {
+    
 }
