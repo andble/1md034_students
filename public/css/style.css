@@ -23,6 +23,10 @@ body {
 
 }
 
+#submit {
+    margin-top: 5px;
+}
+
 button:hover {
     background-color: green;
     cursor: pointer;
@@ -30,4 +34,8 @@ button:hover {
 
 table {
     width: 120%;
+}
+
+section {
+    margin: 5px;
 }
