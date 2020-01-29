@@ -6,6 +6,13 @@ body {
     font-size: 12pt;
 }
 
+#burgertitle {
+    display: inline;
+    width: 100%;
+    text-align: center;
+    margin-top:60px;
+}
+
 header {
     z-index: -999;
     overflow: hidden;
@@ -33,20 +40,16 @@ header img {
 #headerpic {
     opacity: 0.8;
 }
+.burger{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 #order {
     margin-top: -20px;
     background-color: #000000;
     color: #ffffff;
     border: 1px dashed #ffffff;
-}
-
-#contact {
-
-}
-
-#title {
-    text-align: center;
 }
 
 #submit {
@@ -59,8 +62,36 @@ button:hover {
     cursor: pointer;
 }
 
-table {
-    width: 120%;
+.wrapper {
+    display: grid;
+    grid-gap: 300px;
+    grid-template-columns: 100px 100px 100px;
+    background-color: #000000;
+    color: #000000;
+}
+
+.box {
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 100%;
+}
+
+.a {
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+    width: 200%;
+}
+.b {
+    grid-column: 2 ;
+    grid-row: 1 / span 2;
+    width: 200%;
+}
+.c {
+    grid-column: 3 ;
+    grid-row: 1 / span 2;
+    width: 200%;
 }
 
 section {
