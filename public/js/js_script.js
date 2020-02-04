@@ -1,4 +1,8 @@
-/*function menuItem(name, kCal, glut, lact, src, comment) {
+
+
+/*
+//--------------------------Old school burgers-------------------
+function menuItem(name, kCal, glut, lact, src, comment) {
         this.name = name;
         this.kCal = kCal;
         this.glut = glut;
@@ -14,19 +18,22 @@ let salmonBurger = new menuItem('Salmon Deluxe', 700, true, true, 'https://stati
 let hamBurger= new menuItem('HAMburger', 800, true, true, 'https://image-cdn.neatoshop.com/styleimg/53981/none/lightturquoise/default/336937-20;1482116361t.jpg', 'Den lilla grisen på burgaren medkommer');
 let leSpecial = new menuItem('leSpecial', 770, true, true, 'https://memeguy.com/photos/images/is-it-a-hamburger-or-a-hot-dog-301683.jpg', 'Gissa vad denna innehåller');
 */
-/*
+
 //---------------HTML-delen------------
-                <div class="wrapper" id="app">
+                /*<div class="wrapper" id="app">
                    
                 </div>   
 
--------------------------JS-delen
-let burgers = [theFireBurger, salmonBurger, veggieBurger, hamBurger, leSpecial];
+//-------------------------JS-delen
+
+//let theFireBurger = JSON.parse({ "name":"The Fire Burger", "kCal":800, "glut":true, "lact": true, "src":"https://i.iheart.com/v3/re/new_assets/5a0ae89a2697c93e2ac77b9d?ops=max%28750%2C0%29%2Cquality%2880%29", "comment": "Vår populäraste burgare"});
+
+//let burgers = [theFireBurger, salmonBurger, veggieBurger, hamBurger, leSpecial];
 let grid = document.getElementById("app");
 
-for (let i in burgers) {
+for (let i = 0; i <food.length; i++) {
 
-  burger = burgers[i];
+  burger = food[i];
 
   let box = document.createElement("div");
   let h2 = document.createElement("h2");
