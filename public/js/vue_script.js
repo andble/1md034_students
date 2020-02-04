@@ -1,4 +1,4 @@
-const vm = new Vue({
+/*const vm = new Vue({
     el: '#myID',
     data: {
       arbitraryVariableName: 'Välj en burgare',
@@ -9,7 +9,7 @@ const vm = new Vue({
       b5: leSpecial.display()
     }
   })
-
+*/
 //---------------------------loop och conditional------------------------
   // I HTML-filen: 
   /* <div id="myID">
