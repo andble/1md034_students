@@ -44,3 +44,25 @@ document.getElementById("myID").appendChild(list);
 
 
 console.log( this.display() ); 
+
+
+//-----------------------loop----------------------
+//HTTP-delen:
+/*<div id="myID">
+    <h1>Välj en burgare</h1>
+</div>
+*/
+
+//JS-delen:
+/*
+let list = document.createElement('ul');
+let burgers = [theFireBurger, salmonBurger, veggieBurger, hamBurger, leSpecial];
+
+
+for (burger in burgers) {
+	let li = document.createElement("li");
+  let txt = document.createTextNode(burger.name); //Den kommer inte åt burgers?
+  li.appendChild(txt);
+  list.appendChild(li);
+}
+document.getElementById("myID").appendChild(list); */
