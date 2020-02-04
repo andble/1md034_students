@@ -1,4 +1,41 @@
 
+let myButton = document.getElementById('submit');
+myButton.onclick = function () {
+
+let name = document.getElementById("name").value;
+
+let email = document.getElementById("email").value;
+
+
+let street = document.getElementById("street").value;
+
+
+let number = document.getElementById("nummer").value;
+
+
+let pay = document.getElementById("payment");
+let payment = pay.options[pay.selectedIndex].value;
+
+
+let gender = getGender();
+
+
+let userInfoArray = [name, email, street, number, payment, gender];
+}
+
+
+function getGender() {
+  let ele = document.getElementsByName('gender');
+
+  for(i = 0; i < ele.length; i++) {
+      if(ele[i].checked){
+          return ele[i].value;
+      }
+  }
+  return null;
+}
+
+
 
 /*
 //--------------------------Old school burgers-------------------
