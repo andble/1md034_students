@@ -1,4 +1,4 @@
-
+/*
 let myButton = document.getElementById('submit');
 myButton.onclick = function () {
 
@@ -37,7 +37,7 @@ function getGender() {
 
 
 
-/*
+
 //--------------------------Old school burgers-------------------
 function menuItem(name, kCal, glut, lact, src, comment) {
         this.name = name;
