@@ -78,23 +78,6 @@ button:hover {
     font-size: 100%;
 }
 
-/*
-.a {
-    grid-column: 1 / span 2;
-    grid-row: 1 /span 2;
-    width: 200%;
-}
-.b {
-    grid-column: 2 ;
-    grid-row: 1 / span 2;
-    width: 200%;
-}
-.c {
-    grid-column: 3 ;
-    grid-row: 1 / span 2;
-    width: 200%;
-}*/
-
 section {
     margin: 5px;
     border: 1px dashed #000000;

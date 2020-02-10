@@ -53,7 +53,7 @@ const socket = io();
         localOrder: {x: 0, y: 0},
         lastOrder: 0,
     },
-    methods: {
+    methods: {/*
         submitOrder: function() {
             this.fullname = "Name: " + document.getElementById("name").value;
             this.email = "E-mail: " + document.getElementById("email").value;
@@ -64,7 +64,7 @@ const socket = io();
 
             this.userInfo = [this.fullname, this.email, this.street, this.housenum, this.payment, this.gender];
             console.log(this.userInfo);
-        },
+        },*/
         getNext: function() {
             this.lastOrder++;
             return this.lastOrder;
@@ -78,6 +78,16 @@ const socket = io();
                   this.localOrder.y = event.clientY - 10 - offset.y;
         },
         addOrder: function() {
+            this.fullname = "Name: " + document.getElementById("name").value;
+            this.email = "E-mail: " + document.getElementById("email").value;
+            var pay = document.getElementById("payment");
+            this.payment = "Betalningsmetod: " + pay.options[pay.selectedIndex].value;
+            this.gender = "Kön: " + getGender();
+            this.yourBurgers = vm.yourBurger;
+
+            this.userInfo = [this.fullname, this.email, this.payment, this.gender];
+            console.log(this.userInfo);
+
             socket.emit('addOrder', {
               orderId: this.getNext(),
               details: {
@@ -85,6 +95,7 @@ const socket = io();
                 y: this.localOrder.y, 
               },
               orderItems: vm.yourBurger,
+              userInfo: this.userInfo,
             });
         },
     }
