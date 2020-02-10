@@ -16,6 +16,10 @@
                     </div v-for="burger in burgers">*/
 
 //------------------Vue delen--------------
+'use strict';
+const socket = io();
+
+
  function getGender() {
     let ele = document.getElementsByName('gender');
   
@@ -45,14 +49,21 @@
         payment: '',
         gender: '',
         userInfo: [],
-        yourBurgers:[]
+        yourBurgers:[],
+        orders: {}
     },
+    created: function() {
+        socket.on('initialize', function(data) {
+          this.orders = data.orders;
+        }.bind(this));
+        socket.on('currentQueue', function(data) {
+          this.orders = data.orders;
+        }.bind(this));
+      },
     methods: {
         submitOrder: function() {
             this.fullname = "Name: " + document.getElementById("name").value;
             this.email = "E-mail: " + document.getElementById("email").value;
-            this.street = "Address: " + document.getElementById("street").value;
-            this.housenum = "Husnummer: " + document.getElementById("nummer").value;
             var pay = document.getElementById("payment");
             this.payment = "Betalningsmetod: " + pay.options[pay.selectedIndex].value;
             this.gender = "Kön: " + getGender();
@@ -60,9 +71,29 @@
 
             this.userInfo = [this.fullname, this.email, this.street, this.housenum, this.payment, this.gender];
             console.log(this.userInfo);
-        }
-    }
-})
+        },
+        getNext: function() {
+            let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
+              return Math.max(last, next);
+            }, 0);
+            return lastOrder + 1;
+        },
+        addOrder: function(event) {
+            let offset = {
+              x: event.currentTarget.getBoundingClientRect().left,
+              y: event.currentTarget.getBoundingClientRect().top,
+            };
+            socket.emit('addOrder', {
+              orderId: this.getNext(),
+              details: {
+                x: event.clientX - 10 - offset.x,
+                y: event.clientY - 10 - offset.y,
+              },
+              orderItems: ['Beans', 'Curry'],
+            });
+        },
+    },
+});
 //---------------------------loop och conditional------------------------
   // I HTML-filen: 
   /*

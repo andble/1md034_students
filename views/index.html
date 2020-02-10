@@ -5,6 +5,7 @@
         <meta charset="utf-8"/>
     <!--link rel="stylesheet" type="text/css" href="reset.css"--/-->
         <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="/socket.io/socket.io.js" defer></script>
         <script src="https://vuejs.org/js/vue.js" defer></script>
         <script src="js/js_script.js" defer></script>
         <script src="js/vue_script.js" defer></script>
@@ -60,11 +61,6 @@
                         <input type="text" id="name" name="name" required="required" placeholder="För -och eftername"> <br />
                         <label for="email">E-mail</label><br>
                         <input type="text" id="email" name="email" required="required" placeholder="abc123@yeet.com"> <br />
-                        <label for="street">Address</label><br>
-                        <input type="text" id="street" name="street" required="required" placeholder="Gatunamn postkod stad"> <br />
-                        <label for="nummer">Husnummer</label><br>
-                        <input type="number" id="nummer" name="nummer" required="required" placeholder="Husnummer"> <br />
-                    </p>
                     <label for="payment"> Betalningsmetod</label><br />
                     <select id="payment" name="pay">
                         <option selected="selected">Kreditkort</option>
@@ -80,6 +76,17 @@
                         <label><input type="radio" name="gender" required="required" placeholder="Other" value="Annat">Annat</label> <br />
                     </p>
                 </form>
+                    <h1> Click in the map! </h1>
+                    <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+                    <div class="view-box">
+                    <div id="dots" v-on:click="addOrder">
+                        <div 
+                            v-for="(order, key) in orders"
+                            v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                            {{key}}
+                        </div>
+                    </div>
+                    </div>
                     <button v-on:click="submitOrder" id="submit" type="submit"><img src="https://apps.odoo.com/apps/modules/13.0/pos_home_delivery/features/home_delivery.png" width="30" height="25" alt="Skicka" title="Skicka">Skicka beställning!</button>
                     <p v-for="info in userInfo">{{info}}</p>
                     <p v-for="burger in yourBurgers">{{burger}}</p>

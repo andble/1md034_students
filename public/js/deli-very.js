@@ -1,4 +1,4 @@
-/* jslint es6:true, indent: 2 */
+  /* jslint es6:true, indent: 2 */
 /* global Vue, io */
 /* exported vm */
 'use strict';
