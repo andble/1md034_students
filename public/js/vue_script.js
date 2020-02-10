@@ -16,10 +16,6 @@
                     </div v-for="burger in burgers">*/
 
 //------------------Vue delen--------------
-'use strict';
-const socket = io();
-
-
  function getGender() {
     let ele = document.getElementsByName('gender');
   
@@ -30,6 +26,9 @@ const socket = io();
     }
     return null;
   }
+
+  'use strict';
+const socket = io();
 
   const vm = new Vue({
     el: '#app',
@@ -50,16 +49,10 @@ const socket = io();
         gender: '',
         userInfo: [],
         yourBurgers:[],
-        orders: {}
+        orders: {},
+        localOrder: {x: 0, y: 0},
+        lastOrder: 0,
     },
-    created: function() {
-        socket.on('initialize', function(data) {
-          this.orders = data.orders;
-        }.bind(this));
-        socket.on('currentQueue', function(data) {
-          this.orders = data.orders;
-        }.bind(this));
-      },
     methods: {
         submitOrder: function() {
             this.fullname = "Name: " + document.getElementById("name").value;
@@ -73,26 +66,28 @@ const socket = io();
             console.log(this.userInfo);
         },
         getNext: function() {
-            let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-              return Math.max(last, next);
-            }, 0);
-            return lastOrder + 1;
+            this.lastOrder++;
+            return this.lastOrder;
         },
-        addOrder: function(event) {
+        displayOrder: function() {
             let offset = {
-              x: event.currentTarget.getBoundingClientRect().left,
-              y: event.currentTarget.getBoundingClientRect().top,
-            };
+                x: event.currentTarget.getBoundingClientRect().left,
+                y: event.currentTarget.getBoundingClientRect().top,
+              };
+                  this.localOrder.x = event.clientX - 10 - offset.x;
+                  this.localOrder.y = event.clientY - 10 - offset.y;
+        },
+        addOrder: function() {
             socket.emit('addOrder', {
               orderId: this.getNext(),
               details: {
-                x: event.clientX - 10 - offset.x,
-                y: event.clientY - 10 - offset.y,
+                x: this.localOrder.x,
+                y: this.localOrder.y, 
               },
-              orderItems: ['Beans', 'Curry'],
+              orderItems: vm.yourBurger,
             });
         },
-    },
+    }
 });
 //---------------------------loop och conditional------------------------
   // I HTML-filen: 
